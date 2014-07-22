@@ -12,15 +12,15 @@
 		726C08AD197ED60C00704170 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 726C08AC197ED60C00704170 /* UIKit.framework */; };
 		726C08B3197ED60C00704170 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 726C08B1197ED60C00704170 /* InfoPlist.strings */; };
 		726C08B5197ED60C00704170 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 726C08B4197ED60C00704170 /* main.m */; };
-		726C08B9197ED60C00704170 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 726C08B8197ED60C00704170 /* AppDelegate.m */; };
+		726C08B9197ED60C00704170 /* MNBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 726C08B8197ED60C00704170 /* MNBAppDelegate.m */; };
 		726C08BB197ED60C00704170 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 726C08BA197ED60C00704170 /* Images.xcassets */; };
 		726C08C2197ED60C00704170 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 726C08C1197ED60C00704170 /* XCTest.framework */; };
 		726C08C3197ED60C00704170 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 726C08A8197ED60C00704170 /* Foundation.framework */; };
 		726C08C4197ED60C00704170 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 726C08AC197ED60C00704170 /* UIKit.framework */; };
 		726C08CC197ED60C00704170 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 726C08CA197ED60C00704170 /* InfoPlist.strings */; };
 		726C08CE197ED60C00704170 /* calculatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 726C08CD197ED60C00704170 /* calculatorTests.m */; };
-		726C08DA197ED71A00704170 /* Calculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 726C08D9197ED71A00704170 /* Calculator.m */; };
-		726C08DB197ED71A00704170 /* Calculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 726C08D9197ED71A00704170 /* Calculator.m */; };
+		726C08DA197ED71A00704170 /* MNBCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 726C08D9197ED71A00704170 /* MNBCalculator.m */; };
+		726C08DB197ED71A00704170 /* MNBCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 726C08D9197ED71A00704170 /* MNBCalculator.m */; };
 		729A49BB197EE83A00983BA9 /* calculatorTests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 729A49BA197EE83A00983BA9 /* calculatorTests-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -43,15 +43,15 @@
 		726C08B2197ED60C00704170 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		726C08B4197ED60C00704170 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		726C08B6197ED60C00704170 /* calculator-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "calculator-Prefix.pch"; sourceTree = "<group>"; };
-		726C08B7197ED60C00704170 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		726C08B8197ED60C00704170 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		726C08B7197ED60C00704170 /* MNBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MNBAppDelegate.h; sourceTree = "<group>"; };
+		726C08B8197ED60C00704170 /* MNBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MNBAppDelegate.m; sourceTree = "<group>"; };
 		726C08BA197ED60C00704170 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		726C08C0197ED60C00704170 /* calculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = calculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		726C08C1197ED60C00704170 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		726C08CB197ED60C00704170 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		726C08CD197ED60C00704170 /* calculatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = calculatorTests.m; sourceTree = "<group>"; };
-		726C08D8197ED71A00704170 /* Calculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Calculator.h; sourceTree = "<group>"; };
-		726C08D9197ED71A00704170 /* Calculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Calculator.m; sourceTree = "<group>"; };
+		726C08D8197ED71A00704170 /* MNBCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNBCalculator.h; sourceTree = "<group>"; };
+		726C08D9197ED71A00704170 /* MNBCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNBCalculator.m; sourceTree = "<group>"; };
 		729A49BA197EE83A00983BA9 /* calculatorTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "calculatorTests-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,8 +113,8 @@
 			isa = PBXGroup;
 			children = (
 				726C08D7197ED6D300704170 /* Controllers */,
-				726C08B7197ED60C00704170 /* AppDelegate.h */,
-				726C08B8197ED60C00704170 /* AppDelegate.m */,
+				726C08B7197ED60C00704170 /* MNBAppDelegate.h */,
+				726C08B8197ED60C00704170 /* MNBAppDelegate.m */,
 				726C08BA197ED60C00704170 /* Images.xcassets */,
 				726C08AF197ED60C00704170 /* Supporting Files */,
 			);
@@ -154,8 +154,8 @@
 		726C08D7197ED6D300704170 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				726C08D8197ED71A00704170 /* Calculator.h */,
-				726C08D9197ED71A00704170 /* Calculator.m */,
+				726C08D8197ED71A00704170 /* MNBCalculator.h */,
+				726C08D9197ED71A00704170 /* MNBCalculator.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -256,8 +256,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				726C08DA197ED71A00704170 /* Calculator.m in Sources */,
-				726C08B9197ED60C00704170 /* AppDelegate.m in Sources */,
+				726C08DA197ED71A00704170 /* MNBCalculator.m in Sources */,
+				726C08B9197ED60C00704170 /* MNBAppDelegate.m in Sources */,
 				726C08B5197ED60C00704170 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,7 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				726C08CE197ED60C00704170 /* calculatorTests.m in Sources */,
-				726C08DB197ED71A00704170 /* Calculator.m in Sources */,
+				726C08DB197ED71A00704170 /* MNBCalculator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

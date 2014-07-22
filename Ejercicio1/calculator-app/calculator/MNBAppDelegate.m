@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Marcelo Busico. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "MNBAppDelegate.h"
 
 @implementation AppDelegate
 

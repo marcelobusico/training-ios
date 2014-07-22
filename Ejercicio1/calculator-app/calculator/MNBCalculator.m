@@ -6,17 +6,22 @@
 //  Copyright (c) 2014 Marcelo Busico. All rights reserved.
 //
 
-#import "Calculator.h"
+#import "MNBCalculator.h"
 
-@interface Calculator ()
+@interface MNBCalculator ()
 
 @end
 
 
-@implementation Calculator
+@implementation MNBCalculator
 
 -(id)init{
-    _currentValue = 0;
+    self = [super init];
+    
+    if(self) {
+        _currentValue = 0;
+    }
+    
     return self;
 }
 

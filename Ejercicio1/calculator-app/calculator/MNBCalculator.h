@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Calculator : NSObject
+@interface MNBCalculator : NSObject
 
 @property double currentValue;
 

@@ -7,11 +7,11 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "Calculator.h"
+#import "MNBCalculator.h"
 
 @interface CalculatorTests : XCTestCase
 
-@property Calculator *calculator;
+@property MNBCalculator *calculator;
 
 @end
 
@@ -20,7 +20,7 @@
 - (void)setUp
 {
     [super setUp];
-    _calculator = [[Calculator alloc] init];
+    _calculator = [[MNBCalculator alloc] init];
 }
 
 - (void)tearDown
@@ -29,7 +29,7 @@
 }
 
 
-- (void)test_add_operation_to_current_value
+- (void)testAddOperationToCurrentValue
 {
     XCTAssertEqual(_calculator.currentValue, 0, @"Initial value of calculator should be zero.");
     
@@ -44,7 +44,7 @@
 }
 
 
-- (void)test_substract_operation_from_current_value
+- (void)testSubstractOperationFromCurrentValue
 {
     XCTAssertEqual(_calculator.currentValue, 0, @"Initial value of calculator should be zero.");
     
@@ -59,7 +59,7 @@
 }
 
 
-- (void)test_multiply_operation_by_current_value
+- (void)testMultiplyOperationByCurrentValue
 {
     _calculator.currentValue = 3;
     XCTAssertEqual(_calculator.currentValue, 3, @"Initial value of calculator should be zero.");
@@ -72,7 +72,7 @@
 }
 
 
-- (void)test_divide_operation_using_current_value
+- (void)testDivideOperationUsingCurrentValue
 {
     _calculator.currentValue = 20;
     XCTAssertEqual(_calculator.currentValue, 20, @"Initial value of calculator should be zero.");
@@ -84,7 +84,7 @@
     XCTAssertEqual(_calculator.currentValue, 2, @"Unexpected current value in calculator.");
 }
 
-- (void)test_combine_multiple_operations
+- (void)testCombineMultipleOperations
 {
     _calculator.currentValue = 3;
     XCTAssertEqual(_calculator.currentValue, 3, @"Initial value of calculator should be zero.");

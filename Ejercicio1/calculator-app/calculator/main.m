@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-#import "AppDelegate.h"
+#import "MNBAppDelegate.h"
 
 int main(int argc, char * argv[])
 {
