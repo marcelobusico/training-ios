@@ -48,13 +48,13 @@
 {
     XCTAssertEqual(_calculator.currentValue, 0, @"Initial value of calculator should be zero.");
     
-    [_calculator substractFromCurrentValue: 5];
+    [_calculator subtractFromCurrentValue: 5];
     XCTAssertEqual(_calculator.currentValue, -5, @"Unexpected current value in calculator.");
     
-    [_calculator substractFromCurrentValue: 7];
+    [_calculator subtractFromCurrentValue: 7];
     XCTAssertEqual(_calculator.currentValue, -12, @"Unexpected current value in calculator.");
     
-    [_calculator substractFromCurrentValue: 3.141592];
+    [_calculator subtractFromCurrentValue: 3.141592];
     XCTAssertEqual(_calculator.currentValue, -15.141592, @"Unexpected current value in calculator.");
 }
 
@@ -98,8 +98,14 @@
     [_calculator multiplyCurrentValue: 9];
     XCTAssertEqual(_calculator.currentValue, 18, @"Unexpected current value in calculator.");
     
-    [_calculator substractFromCurrentValue: 3];
+    [_calculator subtractFromCurrentValue: 3];
     XCTAssertEqual(_calculator.currentValue, 15, @"Unexpected current value in calculator.");
+}
+
+- (void)testGetConvertedDisplayValue {
+    _calculator.currentDisplayValue = [NSMutableString stringWithString:@"12.34"];
+    double convertedValue = [_calculator getConvertedDisplayValue];
+    XCTAssertEqual(convertedValue, 12.34, "Unexpected converted value.");
 }
 
 

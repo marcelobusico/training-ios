@@ -10,11 +10,29 @@
 
 @interface MNBCalculator : NSObject
 
+typedef enum
+{
+    OPERATION_SUM,
+    OPERATION_SUBTRACTION,
+    OPERATION_MULTIPLICATION,
+    OPERATION_DIVISION
+} MathOperation;
+
+@property NSMutableString *currentDisplayValue;
+
 @property double currentValue;
+
+@property MathOperation mathOperation;
+
+-(void)setOperation:(MathOperation) operation withValue:(NSString *)currentDisplayValue;
+
+-(double)applyOperationWith:(double) value;
+
+-(double)getConvertedDisplayValue;
 
 -(double)addToCurrentValue:(double)value;
 
--(double)substractFromCurrentValue:(double)value;
+-(double)subtractFromCurrentValue:(double)value;
 
 -(double)multiplyCurrentValue:(double)value;
 

@@ -6,16 +6,19 @@
 //  Copyright (c) 2014 Marcelo Busico. All rights reserved.
 //
 
-#import "MNBAppDelegate.h"
+#import "AppDelegate.h"
+#import "MNBCalculatorViewController.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
+//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+//    // Override point for customization after application launch.
+//    self.window.backgroundColor = [UIColor whiteColor];
+//    MNBCalculatorViewController *viewController = [[MNBCalculatorViewController alloc] initWithNibName:nil bundle:nil];
+//    self.window.rootViewController = viewController;
+//    [self.window makeKeyAndVisible];
     return YES;
 }
 
