@@ -18,18 +18,15 @@
     self = [super init];
     
     if(self) {
-        _currentDisplayValue = [NSMutableString stringWithString:@""];
         _currentValue = 0;
     }
     
     return self;
 }
 
--(void)setOperation:(MathOperation) operation withValue:(NSString *)currentDisplayValue {
-    [self.currentDisplayValue setString:currentDisplayValue];
-    self.currentValue = [self getConvertedDisplayValue];
+-(void)setOperation:(MathOperation)operation withValue:(double)value {
+    self.currentValue = value;
     self.mathOperation = operation;
-    [self.currentDisplayValue setString:@""];
 }
 
 -(double)applyOperationWith:(double)value {
@@ -52,16 +49,9 @@
             break;
     }
     
-    _currentValue = result;
+    self.currentValue = result;
     
     return result;
-}
-
--(double)getConvertedDisplayValue {
-    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-    [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
-    NSNumber *value = [formatter numberFromString:self.currentDisplayValue];
-    return [value doubleValue];
 }
 
 -(double)addToCurrentValue:(double)value {

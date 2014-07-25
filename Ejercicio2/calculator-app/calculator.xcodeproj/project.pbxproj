@@ -21,9 +21,9 @@
 		726C08CE197ED60C00704170 /* calculatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 726C08CD197ED60C00704170 /* calculatorTests.m */; };
 		726C08DA197ED71A00704170 /* MNBCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 726C08D9197ED71A00704170 /* MNBCalculator.m */; };
 		726C08DB197ED71A00704170 /* MNBCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 726C08D9197ED71A00704170 /* MNBCalculator.m */; };
+		72833A8319828F0A0009A9DB /* MNBCalculatorMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72833A8119828F0A0009A9DB /* MNBCalculatorMainViewController.m */; };
+		72833A8419828F0A0009A9DB /* MNBCalculatorMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72833A8219828F0A0009A9DB /* MNBCalculatorMainViewController.xib */; };
 		729A49BB197EE83A00983BA9 /* calculatorTests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 729A49BA197EE83A00983BA9 /* calculatorTests-Info.plist */; };
-		729A49C5197FF07100983BA9 /* MNBCalculatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 729A49C3197FF07100983BA9 /* MNBCalculatorViewController.m */; };
-		729A49C8197FF3B700983BA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 729A49C7197FF3B700983BA9 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,10 +54,10 @@
 		726C08CD197ED60C00704170 /* calculatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = calculatorTests.m; sourceTree = "<group>"; };
 		726C08D8197ED71A00704170 /* MNBCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNBCalculator.h; sourceTree = "<group>"; };
 		726C08D9197ED71A00704170 /* MNBCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNBCalculator.m; sourceTree = "<group>"; };
+		72833A8019828F0A0009A9DB /* MNBCalculatorMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNBCalculatorMainViewController.h; sourceTree = "<group>"; };
+		72833A8119828F0A0009A9DB /* MNBCalculatorMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNBCalculatorMainViewController.m; sourceTree = "<group>"; };
+		72833A8219828F0A0009A9DB /* MNBCalculatorMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MNBCalculatorMainViewController.xib; sourceTree = "<group>"; };
 		729A49BA197EE83A00983BA9 /* calculatorTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "calculatorTests-Info.plist"; sourceTree = "<group>"; };
-		729A49C2197FF07100983BA9 /* MNBCalculatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNBCalculatorViewController.h; sourceTree = "<group>"; };
-		729A49C3197FF07100983BA9 /* MNBCalculatorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNBCalculatorViewController.m; sourceTree = "<group>"; };
-		729A49C7197FF3B700983BA9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,13 +117,12 @@
 		726C08AE197ED60C00704170 /* calculator-app */ = {
 			isa = PBXGroup;
 			children = (
-				729A49BC197F06D400983BA9 /* Views */,
+				72833A7F19828EF50009A9DB /* ViewControllers */,
 				726C08D7197ED6D300704170 /* Controllers */,
 				726C08B7197ED60C00704170 /* AppDelegate.h */,
 				726C08B8197ED60C00704170 /* AppDelegate.m */,
 				726C08BA197ED60C00704170 /* Images.xcassets */,
 				726C08AF197ED60C00704170 /* Supporting Files */,
-				729A49C7197FF3B700983BA9 /* Main.storyboard */,
 			);
 			name = "calculator-app";
 			path = calculator;
@@ -167,13 +166,14 @@
 			name = Controllers;
 			sourceTree = "<group>";
 		};
-		729A49BC197F06D400983BA9 /* Views */ = {
+		72833A7F19828EF50009A9DB /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				729A49C2197FF07100983BA9 /* MNBCalculatorViewController.h */,
-				729A49C3197FF07100983BA9 /* MNBCalculatorViewController.m */,
+				72833A8019828F0A0009A9DB /* MNBCalculatorMainViewController.h */,
+				72833A8119828F0A0009A9DB /* MNBCalculatorMainViewController.m */,
+				72833A8219828F0A0009A9DB /* MNBCalculatorMainViewController.xib */,
 			);
-			name = Views;
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,8 +251,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72833A8419828F0A0009A9DB /* MNBCalculatorMainViewController.xib in Resources */,
 				726C08B3197ED60C00704170 /* InfoPlist.strings in Resources */,
-				729A49C8197FF3B700983BA9 /* Main.storyboard in Resources */,
 				729A49BB197EE83A00983BA9 /* calculatorTests-Info.plist in Resources */,
 				726C08BB197ED60C00704170 /* Images.xcassets in Resources */,
 			);
@@ -275,7 +275,7 @@
 			files = (
 				726C08DA197ED71A00704170 /* MNBCalculator.m in Sources */,
 				726C08B9197ED60C00704170 /* AppDelegate.m in Sources */,
-				729A49C5197FF07100983BA9 /* MNBCalculatorViewController.m in Sources */,
+				72833A8319828F0A0009A9DB /* MNBCalculatorMainViewController.m in Sources */,
 				726C08B5197ED60C00704170 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -18,17 +18,13 @@ typedef enum
     OPERATION_DIVISION
 } MathOperation;
 
-@property NSMutableString *currentDisplayValue;
-
 @property double currentValue;
 
 @property MathOperation mathOperation;
 
--(void)setOperation:(MathOperation) operation withValue:(NSString *)currentDisplayValue;
+-(void)setOperation:(MathOperation)operation withValue:(double)value;
 
 -(double)applyOperationWith:(double) value;
-
--(double)getConvertedDisplayValue;
 
 -(double)addToCurrentValue:(double)value;
 

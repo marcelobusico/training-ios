@@ -482,6 +482,7 @@
 				726C08881978550100704170 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		726C08891978550100704170 /* Build configuration list for PBXNativeTarget "Mobile PractiseTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +491,7 @@
 				726C088B1978550100704170 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -102,11 +102,4 @@
     XCTAssertEqual(_calculator.currentValue, 15, @"Unexpected current value in calculator.");
 }
 
-- (void)testGetConvertedDisplayValue {
-    _calculator.currentDisplayValue = [NSMutableString stringWithString:@"12.34"];
-    double convertedValue = [_calculator getConvertedDisplayValue];
-    XCTAssertEqual(convertedValue, 12.34, "Unexpected converted value.");
-}
-
-
 @end

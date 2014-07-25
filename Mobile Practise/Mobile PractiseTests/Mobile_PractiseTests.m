@@ -28,7 +28,9 @@
 
 - (void)testExample
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    XCTFail(@"Este test no funca!");
+    XCTAssertEqual(1, 2, @"No son iguales ni a gancho!");
+    //XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
 }
 
 @end
