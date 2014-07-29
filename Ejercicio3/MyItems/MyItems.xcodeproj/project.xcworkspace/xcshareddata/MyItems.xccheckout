@@ -5,16 +5,16 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>C751F4B6-4FA4-4DDD-A03B-D46265800D3C</string>
+	<string>656AA5DE-89CE-48C8-9108-3A83184FABAA</string>
 	<key>IDESourceControlProjectName</key>
-	<string>calculator</string>
+	<string>MyItems</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>3D1856E9-4E7F-4758-8A65-091807BEDEE5</key>
 		<string>ssh://github.com/marcelobusico/training-ios.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Ejercicio2/calculator-app/calculator.xcodeproj/project.xcworkspace</string>
+	<string>Ejercicio3/MyItems/MyItems.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>3D1856E9-4E7F-4758-8A65-091807BEDEE5</key>
