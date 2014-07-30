@@ -11,6 +11,8 @@
 
 @interface MNBCreateItemMainDataViewController ()
 
+@property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
+
 @end
 
 @implementation MNBCreateItemMainDataViewController
@@ -26,23 +28,54 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self registerKeyboardNotifications];
 }
 
-- (void)didReceiveMemoryWarning
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self unregisterKeyboardNotifications];
+}
+
+/*
+
+ UIKIT_EXTERN NSString *const UIKeyboardWillShowNotification;
+ UIKIT_EXTERN NSString *const UIKeyboardDidShowNotification;
+ UIKIT_EXTERN NSString *const UIKeyboardWillHideNotification;
+ UIKIT_EXTERN NSString *const UIKeyboardDidHideNotification;
+ 
+*/
+
+- (void)registerKeyboardNotifications
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+}
+
+- (void)unregisterKeyboardNotifications
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
+}
+
+- (void)keyboardWillShow:(NSNotification *)notification
+{
+    BOOL isPortrait = UIDeviceOrientationIsPortrait([UIApplication sharedApplication].statusBarOrientation);
+    CGFloat keyboardHeight = isPortrait ? CGRectGetHeight([[notification.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue]) : CGRectGetWidth([[notification.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue]);
+    UIEdgeInsets insets = UIEdgeInsetsMake(self.scrollView.contentInset.top, 0.0f, keyboardHeight, 0.0f);
+    self.scrollView.contentInset = insets;
+    self.scrollView.scrollIndicatorInsets = insets;
+}
+
+- (void)keyboardWillHide:(NSNotification *)notification
+{
+    
 }
 
 -(IBAction)nextButtonPressed:(id)sender {
     MNBCreateItemDescriptionViewController *descriptionViewController = [[MNBCreateItemDescriptionViewController alloc] init];
-    
-    [self.navigationController pushViewController:descriptionViewController
-                                         animated:YES];
+    [self.navigationController pushViewController:descriptionViewController animated:YES];
 }
 
 @end
