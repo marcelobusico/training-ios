@@ -12,7 +12,6 @@
 @interface MNBCreateItemDescriptionViewController ()
 
 @property (nonatomic,weak) IBOutlet UITextView *txtDescription;
-@property (nonatomic,weak) IBOutlet NSLayoutConstraint *keyboardHeight;
 
 @end
 
@@ -34,7 +33,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [self observeKeyboard];
+    [self registerKeyboardNotifications];
 }
 
 - (void)didReceiveMemoryWarning
@@ -43,38 +42,30 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)observeKeyboard {
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWillShow:)
-                                                 name:UIKeyboardWillChangeFrameNotification
-                                               object:nil];
-
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWillHide:)
-                                                 name:UIKeyboardWillHideNotification
-                                               object:nil];
+- (void)registerKeyboardNotifications
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
 }
 
--(void)keyboardWillShow:(NSNotification *)notification {
-    NSLog(@"keyboardWillShow");
-    NSDictionary *info = [notification userInfo];
-    NSValue *kbFrame = [info objectForKey:UIKeyboardFrameEndUserInfoKey];
-    NSTimeInterval animationDuration = [[info objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
-    CGRect keyboardFrame = [kbFrame CGRectValue];
-    
+- (void)unregisterKeyboardNotifications
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
+}
+
+- (void)keyboardWillShow:(NSNotification *)notification
+{
     BOOL isPortrait = UIDeviceOrientationIsPortrait([UIApplication sharedApplication].statusBarOrientation);
-    CGFloat height = isPortrait ? keyboardFrame.size.height : keyboardFrame.size.width;
-    
-    self.keyboardHeight.constant = -height;
-    NSLog(@"Height: %f", height);
-    
-    [UIView animateWithDuration:animationDuration animations:^{
-        [self.view layoutIfNeeded];
-    }];
+    CGFloat keyboardHeight = isPortrait ? CGRectGetHeight([[notification.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue]) : CGRectGetWidth([[notification.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue]);
+    UIEdgeInsets insets = UIEdgeInsetsMake(self.txtDescription.contentInset.top, 0.0f, keyboardHeight, 0.0f);
+    self.txtDescription.contentInset = insets;
+    self.txtDescription.scrollIndicatorInsets = insets;
 }
 
--(void)keyboardWillHide:(NSNotification *)notification {
-    NSLog(@"keyboardWillHide");
+- (void)keyboardWillHide:(NSNotification *)notification
+{
+    
 }
 
 -(IBAction)hideKeyboard:(id)sender {

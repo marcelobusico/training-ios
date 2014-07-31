@@ -28,6 +28,11 @@
     return self;
 }
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+}
+
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [self registerKeyboardNotifications];
@@ -37,15 +42,6 @@
     [super viewWillDisappear:animated];
     [self unregisterKeyboardNotifications];
 }
-
-/*
-
- UIKIT_EXTERN NSString *const UIKeyboardWillShowNotification;
- UIKIT_EXTERN NSString *const UIKeyboardDidShowNotification;
- UIKIT_EXTERN NSString *const UIKeyboardWillHideNotification;
- UIKIT_EXTERN NSString *const UIKeyboardDidHideNotification;
- 
-*/
 
 - (void)registerKeyboardNotifications
 {
