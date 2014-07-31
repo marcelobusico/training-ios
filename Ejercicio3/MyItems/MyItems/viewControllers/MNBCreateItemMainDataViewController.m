@@ -80,7 +80,9 @@
 
 - (void)keyboardWillHide:(NSNotification *)notification
 {
-    
+    UIEdgeInsets insets = UIEdgeInsetsMake(self.scrollView.contentInset.top, 0.0f, 0.0f, 0.0f);
+    self.scrollView.contentInset = insets;
+    self.scrollView.scrollIndicatorInsets = insets;
 }
 
 -(IBAction)nextButtonPressed:(id)sender {

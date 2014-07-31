@@ -12,7 +12,8 @@
 
 @interface MNBCreateItemDescriptionViewController ()
 
-@property (nonatomic,strong) IBOutlet UITextView *txtDescription;
+@property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, strong) IBOutlet UITextView *txtDescription;
 @property (nonatomic, strong) MNBToolbarViewController *toolbarViewController;
 @property (nonatomic, strong) MNBCreateItemImagesViewController *imagesViewController;
 
@@ -62,14 +63,16 @@
 {
     BOOL isPortrait = UIDeviceOrientationIsPortrait([UIApplication sharedApplication].statusBarOrientation);
     CGFloat keyboardHeight = isPortrait ? CGRectGetHeight([[notification.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue]) : CGRectGetWidth([[notification.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue]);
-    UIEdgeInsets insets = UIEdgeInsetsMake(self.txtDescription.contentInset.top, 0.0f, keyboardHeight, 0.0f);
-    self.txtDescription.contentInset = insets;
-    self.txtDescription.scrollIndicatorInsets = insets;
+    UIEdgeInsets insets = UIEdgeInsetsMake(self.scrollView.contentInset.top, 0.0f, keyboardHeight, 0.0f);
+    self.scrollView.contentInset = insets;
+    self.scrollView.scrollIndicatorInsets = insets;
 }
 
 - (void)keyboardWillHide:(NSNotification *)notification
 {
-    
+    UIEdgeInsets insets = UIEdgeInsetsMake(self.scrollView.contentInset.top, 0.0f, 0.0f, 0.0f);
+    self.scrollView.contentInset = insets;
+    self.scrollView.scrollIndicatorInsets = insets;
 }
 
 -(IBAction)nextButtonPressed:(id)sender {
