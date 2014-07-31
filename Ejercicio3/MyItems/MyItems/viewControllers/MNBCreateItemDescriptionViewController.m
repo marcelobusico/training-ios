@@ -7,11 +7,14 @@
 //
 
 #import "MNBCreateItemDescriptionViewController.h"
-
+#import "MNBToolbarViewController.h"
+#import "MNBCreateItemImagesViewController.h"
 
 @interface MNBCreateItemDescriptionViewController ()
 
-@property (nonatomic,weak) IBOutlet UITextView *txtDescription;
+@property (nonatomic,strong) IBOutlet UITextView *txtDescription;
+@property (nonatomic, strong) MNBToolbarViewController *toolbarViewController;
+@property (nonatomic, strong) MNBCreateItemImagesViewController *imagesViewController;
 
 @end
 
@@ -23,8 +26,9 @@
     self = [super initWithNibName:NSStringFromClass([self class])
                            bundle:[NSBundle mainBundle]];
     if (self) {
-        // Custom initialization
         self.title = @"Description";
+        self.toolbarViewController = [[MNBToolbarViewController alloc] init];
+        self.imagesViewController = [[MNBCreateItemImagesViewController alloc] init];
     }
     return self;
 }
@@ -32,14 +36,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
     [self registerKeyboardNotifications];
+    self.txtDescription.inputAccessoryView = self.toolbarViewController.view;
+    [self.toolbarViewController.fields addObject:self.txtDescription];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)registerKeyboardNotifications
@@ -68,8 +72,8 @@
     
 }
 
--(IBAction)hideKeyboard:(id)sender {
-    [self.txtDescription resignFirstResponder];
+-(IBAction)nextButtonPressed:(id)sender {
+    [self.navigationController pushViewController:self.imagesViewController animated:YES];
 }
 
 @end

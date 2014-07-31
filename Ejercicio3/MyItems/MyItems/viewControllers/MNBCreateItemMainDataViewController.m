@@ -8,10 +8,17 @@
 
 #import "MNBCreateItemMainDataViewController.h"
 #import "MNBCreateItemDescriptionViewController.h"
+#import "MNBToolbarViewController.h"
 
 @interface MNBCreateItemMainDataViewController ()
 
 @property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
+
+@property (nonatomic, strong) IBOutlet UITextField *txtTitle;
+@property (nonatomic, strong) IBOutlet UITextField *txtSubtitle;
+@property (nonatomic, strong) IBOutlet UITextField *txtPrice;
+@property (nonatomic, strong) MNBToolbarViewController *toolbarViewController;
+@property (nonatomic, strong) MNBCreateItemDescriptionViewController *descriptionViewController;
 
 @end
 
@@ -22,8 +29,9 @@
     self = [super initWithNibName:NSStringFromClass([self class])
                            bundle:[NSBundle mainBundle]];
     if (self) {
-        // Custom initialization
         self.title = @"Main Data";
+        self.toolbarViewController = [[MNBToolbarViewController alloc] init];
+        self.descriptionViewController = [[MNBCreateItemDescriptionViewController alloc] init];
     }
     return self;
 }
@@ -31,6 +39,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.txtTitle.inputAccessoryView = self.toolbarViewController.view;
+    self.txtSubtitle.inputAccessoryView = self.toolbarViewController.view;
+    self.txtPrice.inputAccessoryView = self.toolbarViewController.view;
+    [self.toolbarViewController.fields addObject:self.txtTitle];
+    [self.toolbarViewController.fields addObject:self.txtSubtitle];
+    [self.toolbarViewController.fields addObject:self.txtPrice];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -70,8 +84,7 @@
 }
 
 -(IBAction)nextButtonPressed:(id)sender {
-    MNBCreateItemDescriptionViewController *descriptionViewController = [[MNBCreateItemDescriptionViewController alloc] init];
-    [self.navigationController pushViewController:descriptionViewController animated:YES];
+    [self.navigationController pushViewController:self.descriptionViewController animated:YES];
 }
 
 @end

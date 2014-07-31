@@ -27,6 +27,8 @@
 		728A2BCF19869EB30005BCC0 /* MNBCreateItemImagesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 728A2BCD19869EB30005BCC0 /* MNBCreateItemImagesViewController.xib */; };
 		728A2BD319869EF50005BCC0 /* MNBMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 728A2BD119869EF50005BCC0 /* MNBMainViewController.m */; };
 		728A2BD419869EF50005BCC0 /* MNBMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 728A2BD219869EF50005BCC0 /* MNBMainViewController.xib */; };
+		72CE20DC198A9A8B00191BF2 /* MNBToolbarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72CE20DA198A9A8B00191BF2 /* MNBToolbarViewController.m */; };
+		72CE20DD198A9A8B00191BF2 /* MNBToolbarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72CE20DB198A9A8B00191BF2 /* MNBToolbarViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,9 @@
 		728A2BD019869EF50005BCC0 /* MNBMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNBMainViewController.h; path = viewControllers/MNBMainViewController.h; sourceTree = "<group>"; };
 		728A2BD119869EF50005BCC0 /* MNBMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNBMainViewController.m; path = viewControllers/MNBMainViewController.m; sourceTree = "<group>"; };
 		728A2BD219869EF50005BCC0 /* MNBMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MNBMainViewController.xib; path = viewControllers/MNBMainViewController.xib; sourceTree = "<group>"; };
+		72CE20D9198A9A8B00191BF2 /* MNBToolbarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNBToolbarViewController.h; path = Toolbar/MNBToolbarViewController.h; sourceTree = "<group>"; };
+		72CE20DA198A9A8B00191BF2 /* MNBToolbarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNBToolbarViewController.m; path = Toolbar/MNBToolbarViewController.m; sourceTree = "<group>"; };
+		72CE20DB198A9A8B00191BF2 /* MNBToolbarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MNBToolbarViewController.xib; path = Toolbar/MNBToolbarViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +132,7 @@
 		728A2B9419869D140005BCC0 /* MyItems */ = {
 			isa = PBXGroup;
 			children = (
+				72CE20D8198A9A6700191BF2 /* Toolbar */,
 				728A2BBD19869DB00005BCC0 /* View Controllers */,
 				728A2B9D19869D140005BCC0 /* MNBAppDelegate.h */,
 				728A2B9E19869D140005BCC0 /* MNBAppDelegate.m */,
@@ -182,6 +188,16 @@
 				728A2BD219869EF50005BCC0 /* MNBMainViewController.xib */,
 			);
 			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		72CE20D8198A9A6700191BF2 /* Toolbar */ = {
+			isa = PBXGroup;
+			children = (
+				72CE20D9198A9A8B00191BF2 /* MNBToolbarViewController.h */,
+				72CE20DA198A9A8B00191BF2 /* MNBToolbarViewController.m */,
+				72CE20DB198A9A8B00191BF2 /* MNBToolbarViewController.xib */,
+			);
+			name = Toolbar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,6 +259,13 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				da,
+				es,
+				pt,
+				"ru-RU",
+				ru,
+				sv,
+				uk,
 			);
 			mainGroup = 728A2B8219869D140005BCC0;
 			productRefGroup = 728A2B8C19869D140005BCC0 /* Products */;
@@ -263,6 +286,7 @@
 				728A2B9919869D140005BCC0 /* InfoPlist.strings in Resources */,
 				728A2BC219869E4C0005BCC0 /* MNBCreateItemMainDataViewController.xib in Resources */,
 				728A2BCF19869EB30005BCC0 /* MNBCreateItemImagesViewController.xib in Resources */,
+				72CE20DD198A9A8B00191BF2 /* MNBToolbarViewController.xib in Resources */,
 				728A2BD419869EF50005BCC0 /* MNBMainViewController.xib in Resources */,
 				728A2BCA19869E990005BCC0 /* MNBCreateItemDescriptionViewController.xib in Resources */,
 				728A2BA119869D140005BCC0 /* Images.xcassets in Resources */,
@@ -286,6 +310,7 @@
 			files = (
 				728A2B9F19869D140005BCC0 /* MNBAppDelegate.m in Sources */,
 				728A2BC119869E4C0005BCC0 /* MNBCreateItemMainDataViewController.m in Sources */,
+				72CE20DC198A9A8B00191BF2 /* MNBToolbarViewController.m in Sources */,
 				728A2BC919869E990005BCC0 /* MNBCreateItemDescriptionViewController.m in Sources */,
 				728A2BCE19869EB30005BCC0 /* MNBCreateItemImagesViewController.m in Sources */,
 				728A2B9B19869D140005BCC0 /* main.m in Sources */,
@@ -486,6 +511,7 @@
 				728A2BB919869D140005BCC0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		728A2BBA19869D140005BCC0 /* Build configuration list for PBXNativeTarget "MyItemsTests" */ = {
 			isa = XCConfigurationList;
@@ -494,6 +520,7 @@
 				728A2BBC19869D140005BCC0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

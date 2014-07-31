@@ -16,19 +16,30 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WN5-jp-AKD">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="539"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="481"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ghT-c1-5FF">
+                    <rect key="frame" x="236" y="489" width="64" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Images >">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="nextButtonPressed:" destination="-1" eventType="touchUpInside" id="DKb-U5-XqB"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="WN5-jp-AKD" secondAttribute="bottom" id="3Z2-4t-pQT"/>
+                <constraint firstItem="ghT-c1-5FF" firstAttribute="top" secondItem="WN5-jp-AKD" secondAttribute="bottom" constant="8" id="3qe-Av-AYE"/>
+                <constraint firstAttribute="bottom" secondItem="ghT-c1-5FF" secondAttribute="bottom" constant="20" id="6XU-DA-yxY"/>
                 <constraint firstItem="WN5-jp-AKD" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="8dK-G6-OV1"/>
                 <constraint firstAttribute="trailing" secondItem="WN5-jp-AKD" secondAttribute="trailing" id="PVf-gt-2SL"/>
+                <constraint firstAttribute="trailing" secondItem="ghT-c1-5FF" secondAttribute="trailing" constant="20" id="fYL-ea-GWb"/>
                 <constraint firstItem="WN5-jp-AKD" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="qNj-ti-BFN"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
