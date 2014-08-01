@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MNBCreateItemImagesViewController : UIViewController
+@interface MNBCreateItemImagesViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
 @end

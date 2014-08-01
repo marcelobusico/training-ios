@@ -132,6 +132,7 @@
 		728A2B9419869D140005BCC0 /* MyItems */ = {
 			isa = PBXGroup;
 			children = (
+				72CE20DE198BD2D200191BF2 /* Table Cells */,
 				72CE20D8198A9A6700191BF2 /* Toolbar */,
 				728A2BBD19869DB00005BCC0 /* View Controllers */,
 				728A2B9D19869D140005BCC0 /* MNBAppDelegate.h */,
@@ -198,6 +199,13 @@
 				72CE20DB198A9A8B00191BF2 /* MNBToolbarViewController.xib */,
 			);
 			name = Toolbar;
+			sourceTree = "<group>";
+		};
+		72CE20DE198BD2D200191BF2 /* Table Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Table Cells";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
