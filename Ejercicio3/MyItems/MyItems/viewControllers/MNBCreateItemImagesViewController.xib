@@ -16,7 +16,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="sNQ-QD-AYT">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="510"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8YF-gA-eHE">
@@ -31,12 +31,24 @@
                         <outlet property="delegate" destination="-1" id="MgJ-7j-hCB"/>
                     </connections>
                 </collectionView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ilp-so-RIA">
+                    <rect key="frame" x="231" y="518" width="69" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Save Item">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="saveItem:" destination="-1" eventType="touchUpInside" id="Abz-Px-Oe5"/>
+                    </connections>
+                </button>
             </subviews>
             <constraints>
-                <constraint firstItem="sNQ-QD-AYT" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="9gx-7P-ncz"/>
-                <constraint firstAttribute="bottom" secondItem="sNQ-QD-AYT" secondAttribute="bottom" id="AlV-VF-5Ym"/>
-                <constraint firstItem="sNQ-QD-AYT" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="EVn-co-c5v"/>
-                <constraint firstAttribute="trailing" secondItem="sNQ-QD-AYT" secondAttribute="trailing" id="mH8-tg-ROR"/>
+                <constraint firstItem="sNQ-QD-AYT" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="1uN-IE-IT9"/>
+                <constraint firstItem="ilp-so-RIA" firstAttribute="top" secondItem="sNQ-QD-AYT" secondAttribute="bottom" constant="8" id="VyG-Ei-s3H"/>
+                <constraint firstAttribute="trailing" secondItem="sNQ-QD-AYT" secondAttribute="trailing" id="anY-xM-eeU"/>
+                <constraint firstItem="sNQ-QD-AYT" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="btG-79-Bks"/>
+                <constraint firstAttribute="trailing" secondItem="ilp-so-RIA" secondAttribute="trailing" constant="20" id="gWv-Vf-fnt"/>
+                <constraint firstAttribute="bottom" secondItem="ilp-so-RIA" secondAttribute="bottom" constant="20" id="sZm-Vh-BPU"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>

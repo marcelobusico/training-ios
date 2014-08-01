@@ -10,4 +10,6 @@
 
 @interface MNBImageViewCell : UICollectionViewCell
 
+@property (nonatomic, weak) IBOutlet UIImageView *imageView;
+
 @end
