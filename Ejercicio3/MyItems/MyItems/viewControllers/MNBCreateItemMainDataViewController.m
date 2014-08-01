@@ -86,7 +86,33 @@
 }
 
 -(IBAction)nextButtonPressed:(id)sender {
+    if([self.txtTitle.text isEqualToString:@""] ||
+       [self.txtPrice.text isEqualToString:@""] ||
+       ![self isValidNumberWithString:self.txtPrice.text]) {
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Missing required data!" message:@"Please enter title and a valid price for the item." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        [alert dismissWithClickedButtonIndex:0 animated:YES];
+        [alert show];
+        
+        return;
+    }
+    
     [self.navigationController pushViewController:self.descriptionViewController animated:YES];
+}
+
+-(BOOL)isValidNumberWithString:(NSString *)string {
+    NSError *error = nil;
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"^\\d+(\\.\\d{1,2})?$" options:NSRegularExpressionCaseInsensitive error:&error];
+    NSRange textRange = NSMakeRange(0, string.length);
+    NSRange matchRange = [regex rangeOfFirstMatchInString:string options:NSMatchingReportProgress range:textRange];
+    
+    BOOL didValidate = NO;
+    
+    if(matchRange.location != NSNotFound) {
+        didValidate = YES;
+    }
+
+    return didValidate;
 }
 
 @end
