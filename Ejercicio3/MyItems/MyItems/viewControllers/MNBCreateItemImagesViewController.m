@@ -7,6 +7,7 @@
 //
 
 #import "MNBCreateItemImagesViewController.h"
+#import "MNBImageViewCell.h"
 
 @interface MNBCreateItemImagesViewController ()
 
@@ -25,7 +26,6 @@
     if (self) {
         self.title = @"Images";
         self.dataArray = [NSMutableArray array];
-        [self.imagesCollectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"ImageCell"];
     }
     
     return self;
@@ -34,6 +34,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.imagesCollectionView registerNib:[UINib nibWithNibName:@"MNBImageViewCell" bundle:nil] forCellWithReuseIdentifier:@"ImageCell"];
     [self.imagesCollectionView reloadData];
 }
 
@@ -60,7 +61,7 @@
 }
 
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
-    return UIEdgeInsetsMake(20, 20, 20, 20);
+    return UIEdgeInsetsMake(10, 10, 10, 10);
 }
 
 @end
