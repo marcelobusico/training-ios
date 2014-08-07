@@ -59,12 +59,9 @@
     for (UIView *view in self.fields) {
         if([view isFirstResponder]) {
             if(previousView) {
-                [view resignFirstResponder];
                 [previousView becomeFirstResponder];
-                return;
-            } else {
-                return;
             }
+            return;
         }
         previousView = view;
     }
@@ -77,7 +74,6 @@
             previousView = view;
         } else {
             if(previousView) {
-                [previousView resignFirstResponder];
                 [view becomeFirstResponder];
                 return;
             }
