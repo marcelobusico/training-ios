@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MNBCreateItemMainDataViewController : UIViewController
+@interface MNBCreateItemMainDataViewController : UIViewController <UITextFieldDelegate>
 
 @end

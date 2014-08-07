@@ -45,6 +45,7 @@
     [self.toolbarViewController.fields addObject:self.txtTitle];
     [self.toolbarViewController.fields addObject:self.txtSubtitle];
     [self.toolbarViewController.fields addObject:self.txtPrice];
+    self.txtPrice.delegate = self;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -102,7 +103,7 @@
 
 -(BOOL)isValidNumberWithString:(NSString *)string {
     NSError *error = nil;
-    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"^\\d+(\\.\\d{1,2})?$" options:NSRegularExpressionCaseInsensitive error:&error];
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"^(\\d+)?(\\.(\\d{1,2})?)?$" options:NSRegularExpressionCaseInsensitive error:&error];
     NSRange textRange = NSMakeRange(0, string.length);
     NSRange matchRange = [regex rangeOfFirstMatchInString:string options:NSMatchingReportProgress range:textRange];
     
@@ -113,6 +114,10 @@
     }
 
     return didValidate;
+}
+
+-(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    return [self isValidNumberWithString:string];
 }
 
 @end
