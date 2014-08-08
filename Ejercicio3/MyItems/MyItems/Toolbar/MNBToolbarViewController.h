@@ -12,4 +12,8 @@
 
 @property (nonatomic,strong) NSMutableArray *fields;
 
+- (void)setButtonPreviousEnabled:(BOOL) enabled;
+
+- (void)setButtonNextEnabled:(BOOL) enabled;
+
 @end

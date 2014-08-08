@@ -45,6 +45,8 @@
     [self.toolbarViewController.fields addObject:self.txtTitle];
     [self.toolbarViewController.fields addObject:self.txtSubtitle];
     [self.toolbarViewController.fields addObject:self.txtPrice];
+    self.txtTitle.delegate = self;
+    self.txtSubtitle.delegate = self;
     self.txtPrice.delegate = self;
 }
 
@@ -117,7 +119,27 @@
 }
 
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-    return [self isValidNumberWithString:string];
+    if([textField isEqual:self.txtPrice]) {
+        //Validate only numeric characters
+        return [self isValidNumberWithString:string];
+    }
+    return YES;
+}
+
+-(void)textFieldDidBeginEditing:(UITextField *)textField {
+    if([textField isEqual:self.txtTitle]) {
+        //First textfield
+        [self.toolbarViewController setButtonPreviousEnabled:NO];
+        [self.toolbarViewController setButtonNextEnabled:YES];
+    } else if([textField isEqual:self.txtPrice]) {
+        //Last textfield
+        [self.toolbarViewController setButtonPreviousEnabled:YES];
+        [self.toolbarViewController setButtonNextEnabled:NO];
+    } else {
+        //Any other text field in the middle
+        [self.toolbarViewController setButtonPreviousEnabled:YES];
+        [self.toolbarViewController setButtonNextEnabled:YES];
+    }
 }
 
 @end

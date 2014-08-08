@@ -46,6 +46,17 @@
     BOOL hideButtons = (self.fields.count <= 1);
     [self.btnPrevious setHidden:hideButtons];
     [self.btnNext setHidden:hideButtons];
+    
+    //Disable prev if it is the first control
+//    int i = 0;
+//    for (UITextField *view in self.fields) {
+//        if([view isFirstResponder]) {
+//            [self.btnPrevious setEnabled:(i > 0)];
+//            [self.btnNext setEnabled:(i < self.fields.count)];
+//            break;
+//        }
+//        i++;
+//    }
 }
 
 -(IBAction)doneButtonPressed:(id)sender {
@@ -79,6 +90,14 @@
             }
         }
     }
+}
+
+- (void)setButtonPreviousEnabled:(BOOL) enabled {
+    [self.btnPrevious setEnabled:enabled];
+}
+
+- (void)setButtonNextEnabled:(BOOL) enabled {
+    [self.btnNext setEnabled:enabled];
 }
 
 @end
