@@ -9,23 +9,26 @@
 #import "MNBCreateItemImagesViewController.h"
 #import "MNBImageViewCell.h"
 #import <MobileCoreServices/MobileCoreServices.h>
+#import "MNBItemEntity.h"
 
 @interface MNBCreateItemImagesViewController ()
 
 @property (nonatomic,strong) IBOutlet UICollectionView *imagesCollectionView;
 @property (nonatomic,strong) NSMutableArray *dataArray;
+@property (nonatomic, strong) MNBItemEntity *itemEntity;
 
 @end
 
 @implementation MNBCreateItemImagesViewController
 
-- (id)init
+- (id)initWithItemEntity:(MNBItemEntity *)itemEntity
 {
     self = [super initWithNibName:NSStringFromClass([self class])
                            bundle:[NSBundle mainBundle]];
     
     if (self) {
         self.title = @"Images";
+        self.itemEntity = itemEntity;
         self.dataArray = [NSMutableArray array];
     }
     
@@ -107,6 +110,8 @@
 }
 
 -(IBAction)saveItem:(id)sender {
+    self.itemEntity.images = self.dataArray;
+    
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success!" message:@"Item saved successfully." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
     [alert dismissWithClickedButtonIndex:0 animated:YES];
     [alert show];

@@ -16,20 +16,22 @@
 @property (nonatomic, strong) IBOutlet UITextView *txtDescription;
 @property (nonatomic, strong) MNBToolbarViewController *toolbarViewController;
 @property (nonatomic, strong) MNBCreateItemImagesViewController *imagesViewController;
+@property (nonatomic, strong) MNBItemEntity *itemEntity;
 
 @end
 
 
 @implementation MNBCreateItemDescriptionViewController
 
-- (id)init
+- (id)initWithItemEntity:(MNBItemEntity *)itemEntity
 {
     self = [super initWithNibName:NSStringFromClass([self class])
                            bundle:[NSBundle mainBundle]];
     if (self) {
         self.title = @"Description";
+        self.itemEntity = itemEntity;
         self.toolbarViewController = [[MNBToolbarViewController alloc] init];
-        self.imagesViewController = [[MNBCreateItemImagesViewController alloc] init];
+        self.imagesViewController = [[MNBCreateItemImagesViewController alloc] initWithItemEntity:itemEntity];
     }
     return self;
 }
@@ -75,7 +77,10 @@
     self.scrollView.scrollIndicatorInsets = insets;
 }
 
--(IBAction)nextButtonPressed:(id)sender {
+-(IBAction)nextButtonPressed:(id)sender
+{
+    self.itemEntity.description = self.txtDescription.text;
+    
     [self.navigationController pushViewController:self.imagesViewController animated:YES];
 }
 

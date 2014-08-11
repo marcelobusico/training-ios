@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MNBItemEntity.h"
 
 @interface MNBCreateItemDescriptionViewController : UIViewController
+
+- (id)initWithItemEntity:(MNBItemEntity *)itemEntity;
 
 @end

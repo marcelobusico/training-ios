@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MNBItemEntity.h"
 
 @interface MNBCreateItemImagesViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIAlertViewDelegate>
+
+- (id)initWithItemEntity:(MNBItemEntity *)itemEntity;
 
 @end

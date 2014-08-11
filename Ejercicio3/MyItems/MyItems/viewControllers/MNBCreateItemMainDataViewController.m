@@ -9,6 +9,7 @@
 #import "MNBCreateItemMainDataViewController.h"
 #import "MNBCreateItemDescriptionViewController.h"
 #import "MNBToolbarViewController.h"
+#import "MNBItemEntity.h"
 
 @interface MNBCreateItemMainDataViewController ()
 
@@ -19,6 +20,7 @@
 @property (nonatomic, strong) IBOutlet UITextField *txtPrice;
 @property (nonatomic, strong) MNBToolbarViewController *toolbarViewController;
 @property (nonatomic, strong) MNBCreateItemDescriptionViewController *descriptionViewController;
+@property (nonatomic, strong) MNBItemEntity *itemEntity;
 
 @end
 
@@ -31,7 +33,8 @@
     if (self) {
         self.title = @"Main Data";
         self.toolbarViewController = [[MNBToolbarViewController alloc] init];
-        self.descriptionViewController = [[MNBCreateItemDescriptionViewController alloc] init];
+        self.itemEntity = [[MNBItemEntity alloc] init];
+        self.descriptionViewController = [[MNBCreateItemDescriptionViewController alloc] initWithItemEntity:self.itemEntity];
     }
     return self;
 }
@@ -99,6 +102,13 @@
         
         return;
     }
+    
+    self.itemEntity.title = self.txtTitle.text;
+    self.itemEntity.subTitle = self.txtSubtitle.text;
+    
+    NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+    [numberFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
+    self.itemEntity.price = [numberFormatter numberFromString:self.txtPrice.text];
     
     [self.navigationController pushViewController:self.descriptionViewController animated:YES];
 }
