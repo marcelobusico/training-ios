@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MNBItemEntity : NSObject
+@interface MNBItemEntity : NSObject <NSCoding>
 
 @property (nonatomic,strong) NSString *title;
 @property (nonatomic,strong) NSString *subTitle;
