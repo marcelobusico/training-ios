@@ -22,7 +22,9 @@
     if (self) {
         // Custom initialization
         self.title = @"Create Items";
+        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Create Items" image:[UIImage imageNamed:@"newIcon"] tag:0];
     }
+    
     return self;
 }
 

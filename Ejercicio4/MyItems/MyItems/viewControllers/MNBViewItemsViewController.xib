@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MNBViewItemsViewController">
             <connections>
+                <outlet property="tableView" destination="tmc-qk-h8c" id="kdA-bi-ZzF"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -15,19 +16,24 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="tmc-qk-h8c">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <rect key="frame" x="20" y="20" width="280" height="488"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="FPa-Sj-y7s"/>
+                        <outlet property="delegate" destination="-1" id="EU0-e1-ymU"/>
+                    </connections>
                 </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="tmc-qk-h8c" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="89t-f2-jFS"/>
-                <constraint firstAttribute="bottom" secondItem="tmc-qk-h8c" secondAttribute="bottom" id="DTj-QH-e1x"/>
-                <constraint firstItem="tmc-qk-h8c" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="o9T-yG-oq5"/>
-                <constraint firstAttribute="trailing" secondItem="tmc-qk-h8c" secondAttribute="trailing" id="tCE-SF-ZVq"/>
+                <constraint firstItem="tmc-qk-h8c" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="89t-f2-jFS"/>
+                <constraint firstAttribute="bottom" secondItem="tmc-qk-h8c" secondAttribute="bottom" constant="60" id="DTj-QH-e1x"/>
+                <constraint firstItem="tmc-qk-h8c" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="o9T-yG-oq5"/>
+                <constraint firstAttribute="trailing" secondItem="tmc-qk-h8c" secondAttribute="trailing" constant="20" id="tCE-SF-ZVq"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>

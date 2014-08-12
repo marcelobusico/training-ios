@@ -32,7 +32,6 @@
                            bundle:[NSBundle mainBundle]];
     if (self) {
         self.title = @"New Item";
-        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"New Item" image:[UIImage imageNamed:@"newIcon"] tag:0];
         self.toolbarViewController = [[MNBToolbarViewController alloc] init];
         self.itemEntity = [[MNBItemEntity alloc] init];
         self.descriptionViewController = [[MNBCreateItemDescriptionViewController alloc] initWithItemEntity:self.itemEntity];

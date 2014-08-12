@@ -15,7 +15,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    MNBCreateItemMainDataViewController *createItemViewController = [[MNBCreateItemMainDataViewController alloc] init];
+    MNBMainViewController *createItemViewController = [[MNBMainViewController alloc] init];
     MNBViewItemsViewController *viewItemsViewController = [[MNBViewItemsViewController alloc] init];
     
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:createItemViewController];

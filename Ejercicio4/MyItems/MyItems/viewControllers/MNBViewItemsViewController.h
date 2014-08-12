@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MNBViewItemsViewController : UIViewController
+@interface MNBViewItemsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @end

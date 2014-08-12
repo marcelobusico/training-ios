@@ -10,6 +10,8 @@
 		721A6FCC19993BC900CE075C /* MNBItemEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 721A6FCB19993BC900CE075C /* MNBItemEntity.m */; };
 		721A6FD01999685800CE075C /* MNBViewItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 721A6FCE1999685800CE075C /* MNBViewItemsViewController.m */; };
 		721A6FD11999685800CE075C /* MNBViewItemsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 721A6FCF1999685800CE075C /* MNBViewItemsViewController.xib */; };
+		721A6FDD199A673400CE075C /* MNBItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 721A6FDB199A673400CE075C /* MNBItemTableViewCell.m */; };
+		721A6FDE199A673400CE075C /* MNBItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 721A6FDC199A673400CE075C /* MNBItemTableViewCell.xib */; };
 		728A2B8F19869D140005BCC0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 728A2B8E19869D140005BCC0 /* Foundation.framework */; };
 		728A2B9119869D140005BCC0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 728A2B9019869D140005BCC0 /* CoreGraphics.framework */; };
 		728A2B9319869D140005BCC0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 728A2B9219869D140005BCC0 /* UIKit.framework */; };
@@ -52,6 +54,9 @@
 		721A6FCD1999685800CE075C /* MNBViewItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNBViewItemsViewController.h; path = viewControllers/MNBViewItemsViewController.h; sourceTree = "<group>"; };
 		721A6FCE1999685800CE075C /* MNBViewItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNBViewItemsViewController.m; path = viewControllers/MNBViewItemsViewController.m; sourceTree = "<group>"; };
 		721A6FCF1999685800CE075C /* MNBViewItemsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MNBViewItemsViewController.xib; path = viewControllers/MNBViewItemsViewController.xib; sourceTree = "<group>"; };
+		721A6FDA199A673400CE075C /* MNBItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNBItemTableViewCell.h; path = Cells/MNBItemTableViewCell.h; sourceTree = "<group>"; };
+		721A6FDB199A673400CE075C /* MNBItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNBItemTableViewCell.m; path = Cells/MNBItemTableViewCell.m; sourceTree = "<group>"; };
+		721A6FDC199A673400CE075C /* MNBItemTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MNBItemTableViewCell.xib; path = Cells/MNBItemTableViewCell.xib; sourceTree = "<group>"; };
 		728A2B8B19869D140005BCC0 /* MyItems.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyItems.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		728A2B8E19869D140005BCC0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		728A2B9019869D140005BCC0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -233,6 +238,9 @@
 				72CE20E4198BE37F00191BF2 /* MNBImageViewCell.h */,
 				72CE20E5198BE37F00191BF2 /* MNBImageViewCell.m */,
 				72CE20E7198BE3BD00191BF2 /* MNBImageViewCell.xib */,
+				721A6FDA199A673400CE075C /* MNBItemTableViewCell.h */,
+				721A6FDB199A673400CE075C /* MNBItemTableViewCell.m */,
+				721A6FDC199A673400CE075C /* MNBItemTableViewCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -322,6 +330,7 @@
 			files = (
 				72CE20E8198BE3BD00191BF2 /* MNBImageViewCell.xib in Resources */,
 				728A2B9919869D140005BCC0 /* InfoPlist.strings in Resources */,
+				721A6FDE199A673400CE075C /* MNBItemTableViewCell.xib in Resources */,
 				728A2BC219869E4C0005BCC0 /* MNBCreateItemMainDataViewController.xib in Resources */,
 				728A2BCF19869EB30005BCC0 /* MNBCreateItemImagesViewController.xib in Resources */,
 				72CE20DD198A9A8B00191BF2 /* MNBToolbarViewController.xib in Resources */,
@@ -353,6 +362,7 @@
 				728A2B9F19869D140005BCC0 /* MNBAppDelegate.m in Sources */,
 				728A2BC119869E4C0005BCC0 /* MNBCreateItemMainDataViewController.m in Sources */,
 				72CE20DC198A9A8B00191BF2 /* MNBToolbarViewController.m in Sources */,
+				721A6FDD199A673400CE075C /* MNBItemTableViewCell.m in Sources */,
 				728A2BC919869E990005BCC0 /* MNBCreateItemDescriptionViewController.m in Sources */,
 				728A2BCE19869EB30005BCC0 /* MNBCreateItemImagesViewController.m in Sources */,
 				728A2B9B19869D140005BCC0 /* main.m in Sources */,
