@@ -31,10 +31,12 @@
     self = [super initWithNibName:NSStringFromClass([self class])
                            bundle:[NSBundle mainBundle]];
     if (self) {
-        self.title = @"Main Data";
+        self.title = @"New Item";
+        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"New Item" image:[UIImage imageNamed:@"newIcon"] tag:0];
         self.toolbarViewController = [[MNBToolbarViewController alloc] init];
         self.itemEntity = [[MNBItemEntity alloc] init];
         self.descriptionViewController = [[MNBCreateItemDescriptionViewController alloc] initWithItemEntity:self.itemEntity];
+        //self.view.autoresizingMask = UIViewAutoresizingFlexibleHeight;
     }
     return self;
 }
@@ -86,7 +88,7 @@
 
 - (void)keyboardWillHide:(NSNotification *)notification
 {
-    UIEdgeInsets insets = UIEdgeInsetsMake(self.scrollView.contentInset.top, 0.0f, 0.0f, 0.0f);
+    UIEdgeInsets insets = UIEdgeInsetsMake(self.scrollView.contentInset.top, 0.0f, self.tabBarController.tabBar.frame.size.height, 0.0f);
     self.scrollView.contentInset = insets;
     self.scrollView.scrollIndicatorInsets = insets;
 }

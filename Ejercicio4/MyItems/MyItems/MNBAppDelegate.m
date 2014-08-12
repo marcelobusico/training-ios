@@ -8,19 +8,27 @@
 
 #import "MNBAppDelegate.h"
 #import "MNBMainViewController.h"
+#import "MNBCreateItemMainDataViewController.h"
+#import "MNBViewItemsViewController.h"
 
 @implementation MNBAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    MNBMainViewController *viewController = [[MNBMainViewController alloc] init];
+    MNBCreateItemMainDataViewController *createItemViewController = [[MNBCreateItemMainDataViewController alloc] init];
+    MNBViewItemsViewController *viewItemsViewController = [[MNBViewItemsViewController alloc] init];
     
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:createItemViewController];
     
+    UITabBarController *tabController = [[UITabBarController alloc] init];
+    
+    [tabController addChildViewController:navController];
+    [tabController addChildViewController:viewItemsViewController];
+
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
-    self.window.rootViewController = navController;
+    self.window.rootViewController = tabController;
     
     [self.window makeKeyAndVisible];
     return YES;

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		721A6FCC19993BC900CE075C /* MNBItemEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 721A6FCB19993BC900CE075C /* MNBItemEntity.m */; };
+		721A6FD01999685800CE075C /* MNBViewItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 721A6FCE1999685800CE075C /* MNBViewItemsViewController.m */; };
+		721A6FD11999685800CE075C /* MNBViewItemsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 721A6FCF1999685800CE075C /* MNBViewItemsViewController.xib */; };
 		728A2B8F19869D140005BCC0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 728A2B8E19869D140005BCC0 /* Foundation.framework */; };
 		728A2B9119869D140005BCC0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 728A2B9019869D140005BCC0 /* CoreGraphics.framework */; };
 		728A2B9319869D140005BCC0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 728A2B9219869D140005BCC0 /* UIKit.framework */; };
@@ -47,6 +49,9 @@
 /* Begin PBXFileReference section */
 		721A6FCA19993BC900CE075C /* MNBItemEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNBItemEntity.h; path = entities/MNBItemEntity.h; sourceTree = "<group>"; };
 		721A6FCB19993BC900CE075C /* MNBItemEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNBItemEntity.m; path = entities/MNBItemEntity.m; sourceTree = "<group>"; };
+		721A6FCD1999685800CE075C /* MNBViewItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNBViewItemsViewController.h; path = viewControllers/MNBViewItemsViewController.h; sourceTree = "<group>"; };
+		721A6FCE1999685800CE075C /* MNBViewItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNBViewItemsViewController.m; path = viewControllers/MNBViewItemsViewController.m; sourceTree = "<group>"; };
+		721A6FCF1999685800CE075C /* MNBViewItemsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MNBViewItemsViewController.xib; path = viewControllers/MNBViewItemsViewController.xib; sourceTree = "<group>"; };
 		728A2B8B19869D140005BCC0 /* MyItems.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyItems.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		728A2B8E19869D140005BCC0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		728A2B9019869D140005BCC0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -205,6 +210,9 @@
 				728A2BD019869EF50005BCC0 /* MNBMainViewController.h */,
 				728A2BD119869EF50005BCC0 /* MNBMainViewController.m */,
 				728A2BD219869EF50005BCC0 /* MNBMainViewController.xib */,
+				721A6FCD1999685800CE075C /* MNBViewItemsViewController.h */,
+				721A6FCE1999685800CE075C /* MNBViewItemsViewController.m */,
+				721A6FCF1999685800CE075C /* MNBViewItemsViewController.xib */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -319,6 +327,7 @@
 				72CE20DD198A9A8B00191BF2 /* MNBToolbarViewController.xib in Resources */,
 				728A2BD419869EF50005BCC0 /* MNBMainViewController.xib in Resources */,
 				728A2BCA19869E990005BCC0 /* MNBCreateItemDescriptionViewController.xib in Resources */,
+				721A6FD11999685800CE075C /* MNBViewItemsViewController.xib in Resources */,
 				728A2BA119869D140005BCC0 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,6 +347,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				721A6FD01999685800CE075C /* MNBViewItemsViewController.m in Sources */,
 				721A6FCC19993BC900CE075C /* MNBItemEntity.m in Sources */,
 				72CE20E6198BE37F00191BF2 /* MNBImageViewCell.m in Sources */,
 				728A2B9F19869D140005BCC0 /* MNBAppDelegate.m in Sources */,

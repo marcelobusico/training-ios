@@ -21,7 +21,7 @@
                            bundle:[NSBundle mainBundle]];
     if (self) {
         // Custom initialization
-        self.title = @"My Items App";
+        self.title = @"Create Items";
     }
     return self;
 }
