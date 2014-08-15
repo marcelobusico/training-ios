@@ -9,8 +9,11 @@
 #import "MNBViewItemsViewController.h"
 #import "MNBItemTableViewCell.h"
 #import "MNBItemEntity.h"
+#import "MBProgressHUD.h"
 
-@interface MNBViewItemsViewController ()
+@interface MNBViewItemsViewController () <MBProgressHUDDelegate> {
+    MBProgressHUD *HUD;
+}
 
 @property (nonatomic,strong) NSArray *items;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -47,12 +50,27 @@
 }
 
 -(void)loadSavedData {
-    self.items = [MNBItemEntity loadSavedData];
-    [self.tableView reloadData];
+    HUD = [[MBProgressHUD alloc] initWithView:self.tabBarController.view];
+	[self.tabBarController.view addSubview:HUD];
+	HUD.mode = MBProgressHUDModeIndeterminate;
+	HUD.delegate = self;
+    [HUD show:YES];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+        self.items = [MNBItemEntity loadSavedData];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+            [HUD hide:YES];
+        });
+    });
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [MNBItemEntity totalNumberOfStoredItems];
+    if(self.items) {
+        return [self.items count];
+    } else {
+        return 0;
+    }
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
