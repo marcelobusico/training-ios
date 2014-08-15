@@ -52,15 +52,10 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if(self.items) {
-        return self.items.count;
-    } else {
-        return 0;
-    }
+    return [MNBItemEntity totalNumberOfStoredItems];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     static NSString *CellIdentifier = @"ItemCell";
     
     MNBItemTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];

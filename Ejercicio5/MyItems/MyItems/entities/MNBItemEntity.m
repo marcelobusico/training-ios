@@ -86,4 +86,10 @@
     return items;
 }
 
++(NSInteger)totalNumberOfStoredItems {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSInteger totalItems = [userDefaults integerForKey:@"totalItems"];
+    return totalItems;
+}
+
 @end

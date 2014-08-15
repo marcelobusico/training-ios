@@ -20,5 +20,6 @@
 -(void)persistItemWithItemId:(NSString *)itemId;
 +(void)forgetAllItems;
 +(NSArray *)loadSavedData;
++(NSInteger)totalNumberOfStoredItems;
 
 @end

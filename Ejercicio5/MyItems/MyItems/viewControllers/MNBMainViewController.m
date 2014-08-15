@@ -64,8 +64,7 @@
 
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         static int AMOUNT_OF_ITEMS = 20;
-        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-        NSInteger totalItems = [userDefaults integerForKey:@"totalItems"];
+        NSInteger totalItems = [MNBItemEntity totalNumberOfStoredItems];
         
         for (int i = 1; i <= AMOUNT_OF_ITEMS; i++) {
             NSInteger itemNumber = i + totalItems;
