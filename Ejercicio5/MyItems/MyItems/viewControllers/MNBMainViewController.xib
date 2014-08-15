@@ -34,9 +34,21 @@
                         <action selector="optionGenerateLotOfItems:" destination="-1" eventType="touchUpInside" id="UgL-qH-Max"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iAj-Jd-m3p">
+                    <rect key="frame" x="107" y="152" width="106" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Forget all items">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="forgetAllItems:" destination="-1" eventType="touchUpInside" id="d68-GK-nCh"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="iAj-Jd-m3p" firstAttribute="top" secondItem="HbY-Gm-egc" secondAttribute="bottom" constant="8" id="LtT-nS-qhM"/>
+                <constraint firstAttribute="centerX" secondItem="iAj-Jd-m3p" secondAttribute="centerX" id="UDb-ni-Bvc"/>
                 <constraint firstItem="g2j-TD-pQF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" symbolic="YES" id="aGT-lI-RV0"/>
                 <constraint firstItem="HbY-Gm-egc" firstAttribute="top" secondItem="g2j-TD-pQF" secondAttribute="bottom" constant="8" id="cyR-NN-MoW"/>
                 <constraint firstAttribute="trailing" secondItem="g2j-TD-pQF" secondAttribute="trailing" constant="20" symbolic="YES" id="fxr-oN-f3s"/>

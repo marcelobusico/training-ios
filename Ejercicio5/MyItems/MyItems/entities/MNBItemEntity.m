@@ -38,11 +38,25 @@
     
     totalItems++;
 
-    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self];
     NSString *itemId = [NSString stringWithFormat:@"item-%d", totalItems];
     
-    [userDefaults setObject:data forKey:itemId];
+    [self persistItemWithItemId:itemId];
+    
     [userDefaults setInteger:totalItems forKey:@"totalItems"];
+    [userDefaults synchronize];
+}
+
+-(void)persistItemWithItemId:(NSString *)itemId {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self];
+    
+    [userDefaults setObject:data forKey:itemId];
+}
+
++(void)forgetAllItems {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setInteger:0 forKey:@"totalItems"];
     [userDefaults synchronize];
 }
 
