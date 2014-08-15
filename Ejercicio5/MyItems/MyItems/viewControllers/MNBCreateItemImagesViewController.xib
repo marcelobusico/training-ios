@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MNBCreateItemImagesViewController">
+            <connections>
+                <outlet property="imagesCollectionView" destination="sNQ-QD-AYT" id="6GL-qi-RHQ"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rmc-Eb-9aS">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="sNQ-QD-AYT">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="406"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8YF-gA-eHE">
+                                <size key="itemSize" width="50" height="50"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                            <cells/>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="yvS-80-xPZ"/>
+                                <outlet property="delegate" destination="-1" id="MgJ-7j-hCB"/>
+                            </connections>
+                        </collectionView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ilp-so-RIA">
+                            <rect key="frame" x="231" y="414" width="69" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Save Item">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="saveItem:" destination="-1" eventType="touchUpInside" id="Abz-Px-Oe5"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="sNQ-QD-AYT" firstAttribute="leading" secondItem="Rmc-Eb-9aS" secondAttribute="leading" id="7tE-qn-cRw"/>
+                        <constraint firstAttribute="trailing" secondItem="ilp-so-RIA" secondAttribute="trailing" constant="20" id="SYh-by-I95"/>
+                        <constraint firstAttribute="bottom" secondItem="ilp-so-RIA" secondAttribute="bottom" constant="60" id="aFj-fo-mb1"/>
+                        <constraint firstAttribute="trailing" secondItem="sNQ-QD-AYT" secondAttribute="trailing" id="cUQ-Hh-wqA"/>
+                        <constraint firstItem="sNQ-QD-AYT" firstAttribute="top" secondItem="Rmc-Eb-9aS" secondAttribute="top" id="trq-VX-zJh"/>
+                        <constraint firstItem="ilp-so-RIA" firstAttribute="top" secondItem="sNQ-QD-AYT" secondAttribute="bottom" constant="8" id="yL8-be-ZBZ"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Rmc-Eb-9aS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ALb-Pj-Y1l"/>
+                <constraint firstItem="Rmc-Eb-9aS" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="b4U-Be-hhb"/>
+                <constraint firstAttribute="trailing" secondItem="Rmc-Eb-9aS" secondAttribute="trailing" id="heJ-UP-k3f"/>
+                <constraint firstAttribute="bottom" secondItem="Rmc-Eb-9aS" secondAttribute="bottom" id="mCT-Oo-zio"/>
+            </constraints>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+            <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+        </view>
+    </objects>
+</document>
