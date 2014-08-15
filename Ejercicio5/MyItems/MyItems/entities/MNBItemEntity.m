@@ -32,4 +32,44 @@
     [aCoder encodeObject:self.images forKey:@"images"];
 }
 
+-(void)persistItem {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSInteger totalItems = [userDefaults integerForKey:@"totalItems"];
+    
+    totalItems++;
+
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self];
+    NSString *itemId = [NSString stringWithFormat:@"item-%d", totalItems];
+    
+    [userDefaults setObject:data forKey:itemId];
+    [userDefaults setInteger:totalItems forKey:@"totalItems"];
+    [userDefaults synchronize];
+}
+
++(NSArray *)loadSavedData {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    
+    NSInteger totalItems = [userDefaults integerForKey:@"totalItems"];
+
+    NSMutableArray *items = [NSMutableArray array];
+
+    for (int i = 1; i <= totalItems; i++) {
+        NSString *itemId = [NSString stringWithFormat:@"item-%d",i];
+        
+        NSData *savedData = [userDefaults valueForKey:itemId];
+        
+        MNBItemEntity *item = nil;
+        
+        if(savedData) {
+            item = [NSKeyedUnarchiver unarchiveObjectWithData:savedData];
+        }
+        
+        if(item) {
+            [items addObject:item];
+        }
+    }
+    
+    return items;
+}
+
 @end

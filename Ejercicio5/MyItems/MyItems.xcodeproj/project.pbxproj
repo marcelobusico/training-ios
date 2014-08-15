@@ -12,6 +12,7 @@
 		721A6FD11999685800CE075C /* MNBViewItemsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 721A6FCF1999685800CE075C /* MNBViewItemsViewController.xib */; };
 		721A6FDD199A673400CE075C /* MNBItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 721A6FDB199A673400CE075C /* MNBItemTableViewCell.m */; };
 		721A6FDE199A673400CE075C /* MNBItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 721A6FDC199A673400CE075C /* MNBItemTableViewCell.xib */; };
+		727DA3A0199E60C700FD9C1B /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 727DA39F199E60C700FD9C1B /* MBProgressHUD.m */; };
 		728A2B8F19869D140005BCC0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 728A2B8E19869D140005BCC0 /* Foundation.framework */; };
 		728A2B9119869D140005BCC0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 728A2B9019869D140005BCC0 /* CoreGraphics.framework */; };
 		728A2B9319869D140005BCC0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 728A2B9219869D140005BCC0 /* UIKit.framework */; };
@@ -57,6 +58,8 @@
 		721A6FDA199A673400CE075C /* MNBItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNBItemTableViewCell.h; path = Cells/MNBItemTableViewCell.h; sourceTree = "<group>"; };
 		721A6FDB199A673400CE075C /* MNBItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNBItemTableViewCell.m; path = Cells/MNBItemTableViewCell.m; sourceTree = "<group>"; };
 		721A6FDC199A673400CE075C /* MNBItemTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MNBItemTableViewCell.xib; path = Cells/MNBItemTableViewCell.xib; sourceTree = "<group>"; };
+		727DA39E199E60C700FD9C1B /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		727DA39F199E60C700FD9C1B /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		728A2B8B19869D140005BCC0 /* MyItems.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyItems.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		728A2B8E19869D140005BCC0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		728A2B9019869D140005BCC0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -126,6 +129,15 @@
 			name = Entities;
 			sourceTree = "<group>";
 		};
+		727DA39D199E607F00FD9C1B /* ProgressLib */ = {
+			isa = PBXGroup;
+			children = (
+				727DA39E199E60C700FD9C1B /* MBProgressHUD.h */,
+				727DA39F199E60C700FD9C1B /* MBProgressHUD.m */,
+			);
+			name = ProgressLib;
+			sourceTree = "<group>";
+		};
 		728A2B8219869D140005BCC0 = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +171,7 @@
 		728A2B9419869D140005BCC0 /* MyItems */ = {
 			isa = PBXGroup;
 			children = (
+				727DA39D199E607F00FD9C1B /* ProgressLib */,
 				721A6FC91999358200CE075C /* Entities */,
 				72CE20DE198BD2D200191BF2 /* Cells */,
 				72CE20D8198A9A6700191BF2 /* Toolbar */,
@@ -363,6 +376,7 @@
 				728A2BC119869E4C0005BCC0 /* MNBCreateItemMainDataViewController.m in Sources */,
 				72CE20DC198A9A8B00191BF2 /* MNBToolbarViewController.m in Sources */,
 				721A6FDD199A673400CE075C /* MNBItemTableViewCell.m in Sources */,
+				727DA3A0199E60C700FD9C1B /* MBProgressHUD.m in Sources */,
 				728A2BC919869E990005BCC0 /* MNBCreateItemDescriptionViewController.m in Sources */,
 				728A2BCE19869EB30005BCC0 /* MNBCreateItemImagesViewController.m in Sources */,
 				728A2B9B19869D140005BCC0 /* main.m in Sources */,

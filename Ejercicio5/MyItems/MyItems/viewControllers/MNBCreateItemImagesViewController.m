@@ -112,7 +112,7 @@
 -(IBAction)saveItem:(id)sender {
     self.itemEntity.images = self.dataArray;
     
-    [self persistItem];
+    [self.itemEntity persistItem];
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success!" message:@"Item saved successfully." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
     [alert dismissWithClickedButtonIndex:0 animated:YES];
@@ -121,27 +121,6 @@
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     [self.navigationController popToRootViewControllerAnimated:YES];
-}
-
--(void)persistItem {
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSData *savedData = [userDefaults valueForKey:@"itemsData"];
-    
-    NSMutableArray *items = nil;
-    if(savedData) {
-        items = [NSKeyedUnarchiver unarchiveObjectWithData:savedData];
-    }
-
-    if(!items) {
-        items = [NSMutableArray array];
-    }
-    
-    [items addObject:self.itemEntity];
-    
-    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:items];
-    
-    [userDefaults setObject:data forKey:@"itemsData"];
-    [userDefaults synchronize];
 }
 
 @end

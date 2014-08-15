@@ -24,12 +24,24 @@
                         <action selector="optionCreateNewItem:" destination="-1" eventType="touchUpInside" id="6h2-ed-ukM"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HbY-Gm-egc">
+                    <rect key="frame" x="74" y="114" width="173" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Autogenerate lot of items">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="optionGenerateLotOfItems:" destination="-1" eventType="touchUpInside" id="UgL-qH-Max"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="g2j-TD-pQF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" symbolic="YES" id="aGT-lI-RV0"/>
+                <constraint firstItem="HbY-Gm-egc" firstAttribute="top" secondItem="g2j-TD-pQF" secondAttribute="bottom" constant="8" id="cyR-NN-MoW"/>
                 <constraint firstAttribute="trailing" secondItem="g2j-TD-pQF" secondAttribute="trailing" constant="20" symbolic="YES" id="fxr-oN-f3s"/>
                 <constraint firstItem="g2j-TD-pQF" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="76" id="sD1-TP-06I"/>
+                <constraint firstAttribute="centerX" secondItem="HbY-Gm-egc" secondAttribute="centerX" id="ypp-AH-NwO"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>

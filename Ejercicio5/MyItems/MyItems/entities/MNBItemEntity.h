@@ -16,4 +16,7 @@
 @property (nonatomic,strong) NSString *description;
 @property (nonatomic,strong) NSArray *images;
 
++(NSArray *)loadSavedData;
+-(void)persistItem;
+
 @end

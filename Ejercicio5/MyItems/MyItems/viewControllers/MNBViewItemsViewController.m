@@ -12,7 +12,7 @@
 
 @interface MNBViewItemsViewController ()
 
-@property (nonatomic,strong) NSMutableArray *items;
+@property (nonatomic,strong) NSArray *items;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
@@ -47,17 +47,7 @@
 }
 
 -(void)loadSavedData {
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSData *savedData = [userDefaults valueForKey:@"itemsData"];
-    
-    self.items = nil;
-    if(savedData) {
-        self.items = [NSKeyedUnarchiver unarchiveObjectWithData:savedData];
-    }
-    
-    if(!self.items) {
-        self.items = [NSMutableArray array];
-    }
+    self.items = [MNBItemEntity loadSavedData];
     [self.tableView reloadData];
 }
 
