@@ -15,56 +15,54 @@
 #import "AFNetworkingSearchManager.h"
 
 @interface ViewController () <MBProgressHUDDelegate> {
-    MBProgressHUD *HUD;
+	MBProgressHUD *HUD;
 }
 
-@property(nonatomic,strong) IBOutlet UITextField *txtSearch;
-@property(nonatomic,strong) NSObject<SearchManager> *searchManager;
+@property (nonatomic, strong) IBOutlet UITextField *txtSearch;
+@property (nonatomic, strong) NSObject <SearchManager> *searchManager;
 
 @end
 
 
 @implementation ViewController
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
-    HUD.delegate = self;
-    HUD.mode = MBProgressHUDModeIndeterminate;
-    [self.navigationController.view addSubview:HUD];
-    
-    //Choose the SearchManager you want to use
-    self.searchManager = [[AFNetworkingSearchManager alloc] init];
-    //self.searchManager = [[URLConnectionSearchManager alloc] init];
+- (void)viewDidLoad {
+	[super viewDidLoad];
+	HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+	HUD.delegate = self;
+	HUD.mode = MBProgressHUDModeIndeterminate;
+	[self.navigationController.view addSubview:HUD];
+
+	//Choose the SearchManager you want to use
+	self.searchManager = [[AFNetworkingSearchManager alloc] init];
+	//self.searchManager = [[URLConnectionSearchManager alloc] init];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
+- (void)didReceiveMemoryWarning {
+	[super didReceiveMemoryWarning];
 }
 
--(IBAction)search:(id)sender {
-    [HUD show:YES];
-    
-    NSString *searchString = [self.txtSearch.text stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    __weak typeof (self) weakSelf = self;
-    
-    [self.searchManager searchItemsWithQuery:searchString completionBlock:^(NSArray *itemEntities) {
-        [HUD hide:YES];
-        if(itemEntities) {
-            [weakSelf showResults:itemEntities];
-        }
-    }];
+- (IBAction)search:(id)sender {
+	[HUD show:YES];
+
+	NSString *searchString = [self.txtSearch.text stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+	__weak typeof(self) weakSelf = self;
+
+	[self.searchManager searchItemsWithQuery:searchString completionBlock: ^(NSArray *itemEntities) {
+	    [HUD hide:YES];
+	    if (itemEntities) {
+	        [weakSelf showResults:itemEntities];
+		}
+	}];
 }
 
--(void)showResults:(NSArray *) results {
-    ResultsViewController *resultsViewController = [[ResultsViewController alloc] init];
-    resultsViewController.title = @"Resultados";
-    resultsViewController.results = results;
-    
-    [self.navigationController pushViewController:resultsViewController
-                                         animated:YES];
+- (void)showResults:(NSArray *)results {
+	ResultsViewController *resultsViewController = [[ResultsViewController alloc] init];
+	resultsViewController.title = @"Resultados";
+	resultsViewController.results = results;
+
+	[self.navigationController pushViewController:resultsViewController
+	                                     animated:YES];
 }
 
 @end
