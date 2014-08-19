@@ -241,6 +241,7 @@
 		726C085D1978550100704170 /* Mobile Practise */ = {
 			isa = PBXGroup;
 			children = (
+				727DDB5719A3FDA80099CA78 /* Managers */,
 				7202A00219A3E416005267BA /* AFNetworking */,
 				7202A01619A3E416005267BA /* UIKit+AFNetworking */,
 				72029FFF19A3DA48005267BA /* MBProgressHUD.h */,
@@ -262,11 +263,6 @@
 				726C08991979AF7600704170 /* ItemCell.m */,
 				72029FFC19A3D3EC005267BA /* NSDictionary+ItemEntity.h */,
 				72029FFD19A3D3EC005267BA /* NSDictionary+ItemEntity.m */,
-				7202A03919A3E4B4005267BA /* SearchManager.h */,
-				7202A03A19A3E7A2005267BA /* URLConnectionSearchManager.h */,
-				7202A03B19A3E7A2005267BA /* URLConnectionSearchManager.m */,
-				7202A03D19A3E922005267BA /* AFNetworkingSearchManager.h */,
-				7202A03E19A3E922005267BA /* AFNetworkingSearchManager.m */,
 			);
 			path = "Mobile Practise";
 			sourceTree = "<group>";
@@ -298,6 +294,18 @@
 				726C087F1978550100704170 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		727DDB5719A3FDA80099CA78 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				7202A03919A3E4B4005267BA /* SearchManager.h */,
+				7202A03A19A3E7A2005267BA /* URLConnectionSearchManager.h */,
+				7202A03B19A3E7A2005267BA /* URLConnectionSearchManager.m */,
+				7202A03D19A3E922005267BA /* AFNetworkingSearchManager.h */,
+				7202A03E19A3E922005267BA /* AFNetworkingSearchManager.m */,
+			);
+			name = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
