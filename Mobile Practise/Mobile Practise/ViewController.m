@@ -9,60 +9,62 @@
 #import "ViewController.h"
 #import "ResultsViewController.h"
 #import "ItemEntity.h"
+#import "MBProgressHUD.h"
 
-@interface ViewController ()
+static NSString * const kSearchURL = @"https://api.mercadolibre.com/sites/MLA/search?q=%@&limit=100";
+
+
+@interface ViewController () <MBProgressHUDDelegate> {
+    MBProgressHUD *HUD;
+}
+
 
 @property(nonatomic,strong) IBOutlet UITextField *txtSearch;
-
 -(IBAction)showResults:(id)sender;
 
 @end
 
-@implementation ViewController
 
-@synthesize txtSearch;
+@implementation ViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+    HUD.delegate = self;
+    HUD.mode = MBProgressHUDModeIndeterminate;
+    [self.navigationController.view addSubview:HUD];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 -(IBAction)search:(id)sender {
-    
-    NSString *stringUrl = [NSString stringWithFormat:@"https://api.mercadolibre.com/sites/MLA/search?q=%@&limit=100",txtSearch.text];
-    NSLog(@"BOTON PRESIONADO!!");
-    NSLog(@"%@", stringUrl);
-    
-    __weak typeof (self) weakSelf = self;
-    
-    NSURL *url = [NSURL URLWithString:stringUrl];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    [NSURLConnection sendAsynchronousRequest:request
-                                       queue:[NSOperationQueue mainQueue]
-                           completionHandler:^(NSURLResponse *response,
-                                               NSData *data, NSError *connectionError)
-     {
-         if (data.length > 0 && connectionError == nil)
-         {
-             
-             NSDictionary *response = [NSJSONSerialization JSONObjectWithData:data
-                                                                      options:0
-                                                                        error:nil];
-             
-             NSArray *results = [ItemEntity parseFrom:response];
-             
-             //self.greetingId.text = [[greeting objectForKey:@"id"] stringValue];
-             //self.greetingContent.text = [greeting objectForKey:@"content"];
-             [weakSelf showResults:results];
-         }
-     }];
+    [HUD show:YES];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSString *searchString = [self.txtSearch.text stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        NSString *stringUrl = [NSString stringWithFormat:kSearchURL, searchString];
+        
+        __weak typeof (self) weakSelf = self;
+        
+        NSURL *url = [NSURL URLWithString:stringUrl];
+        NSURLRequest *request = [NSURLRequest requestWithURL:url];
+        NSURLResponse *response;
+        NSError *error;
+        
+        NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+        
+        if (data.length > 0 && !error)
+        {
+            NSArray *itemEntities = [ItemEntity itemEntitiesFromData:data];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [HUD hide:YES];
+                [weakSelf showResults:itemEntities];
+            });
+        }
+    });
 }
 
 -(void)showResults:(NSArray *) results {

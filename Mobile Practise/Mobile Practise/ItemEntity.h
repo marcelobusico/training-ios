@@ -14,6 +14,6 @@
 @property(nonatomic,strong) NSNumber *price;
 @property(nonatomic,strong) NSString *imageURL;
 
-+(NSArray *)parseFrom:(NSDictionary *)json;
++(NSArray *)itemEntitiesFromData:(NSData *)jsonData;
 
 @end

@@ -30,7 +30,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -62,11 +61,12 @@
     [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
     [formatter setLocale:locale];
     
-    cell.lblTitle.text = [itemEntity title];
-    cell.lblPrice.text = [formatter stringFromNumber:[itemEntity price]];
+    cell.lblTitle.text = itemEntity.title;
+    cell.lblPrice.text = [formatter stringFromNumber:itemEntity.price];
+    cell.itemImage.image = [UIImage imageNamed:@"placeholderIcon"];
     
-    if([itemEntity imageURL]) {
-        NSURL *imageUrl = [NSURL URLWithString:[itemEntity imageURL]];
+    if(itemEntity.imageURL) {
+        NSURL *imageUrl = [NSURL URLWithString:itemEntity.imageURL];
         
         [self downloadImageWithURL:imageUrl completionBlock:^(BOOL succeeded, UIImage *image) {
             if(succeeded) {
@@ -78,7 +78,7 @@
 
 - (void)downloadImageWithURL:(NSURL *)url completionBlock:(void (^)(BOOL succeeded, UIImage *image))completionBlock
 {
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [NSURLConnection sendAsynchronousRequest:request
                                        queue:[NSOperationQueue mainQueue]
                            completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
@@ -95,7 +95,6 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end
