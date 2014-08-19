@@ -62,7 +62,7 @@
 
 	cell.lblTitle.text = itemEntity.title;
 	cell.lblPrice.text = [formatter stringFromNumber:itemEntity.price];
-	cell.itemImage.image = [UIImage imageNamed:@"placeholderIcon"];
+	cell.itemImage.image = placeholder;
 	__weak ItemCell *weakCell = cell;
 
 	if (itemEntity.imageURL) {
