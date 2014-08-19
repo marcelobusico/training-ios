@@ -25,6 +25,10 @@
     NSError *error;
     NSDictionary *json = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
     
+    return [ItemEntity itemEntitiesFromJson:json];
+}
+
++(NSArray *)itemEntitiesFromJson:(NSDictionary *)json {
     NSArray *results = json[@"results"];
     NSMutableArray *items = [NSMutableArray array];
     

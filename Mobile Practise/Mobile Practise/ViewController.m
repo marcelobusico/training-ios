@@ -10,17 +10,16 @@
 #import "ResultsViewController.h"
 #import "ItemEntity.h"
 #import "MBProgressHUD.h"
-
-static NSString * const kSearchURL = @"https://api.mercadolibre.com/sites/MLA/search?q=%@&limit=100";
-
+#import "SearchManager.h"
+#import "URLConnectionSearchManager.h"
+#import "AFNetworkingSearchManager.h"
 
 @interface ViewController () <MBProgressHUDDelegate> {
     MBProgressHUD *HUD;
 }
 
-
 @property(nonatomic,strong) IBOutlet UITextField *txtSearch;
--(IBAction)showResults:(id)sender;
+@property(nonatomic,strong) NSObject<SearchManager> *searchManager;
 
 @end
 
@@ -34,6 +33,10 @@ static NSString * const kSearchURL = @"https://api.mercadolibre.com/sites/MLA/se
     HUD.delegate = self;
     HUD.mode = MBProgressHUDModeIndeterminate;
     [self.navigationController.view addSubview:HUD];
+    
+    //Choose the SearchManager you want to use
+    self.searchManager = [[AFNetworkingSearchManager alloc] init];
+    //self.searchManager = [[URLConnectionSearchManager alloc] init];
 }
 
 - (void)didReceiveMemoryWarning
@@ -43,28 +46,16 @@ static NSString * const kSearchURL = @"https://api.mercadolibre.com/sites/MLA/se
 
 -(IBAction)search:(id)sender {
     [HUD show:YES];
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSString *searchString = [self.txtSearch.text stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-        NSString *stringUrl = [NSString stringWithFormat:kSearchURL, searchString];
-        
-        __weak typeof (self) weakSelf = self;
-        
-        NSURL *url = [NSURL URLWithString:stringUrl];
-        NSURLRequest *request = [NSURLRequest requestWithURL:url];
-        NSURLResponse *response;
-        NSError *error;
-        
-        NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-        
-        if (data.length > 0 && !error)
-        {
-            NSArray *itemEntities = [ItemEntity itemEntitiesFromData:data];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [HUD hide:YES];
-                [weakSelf showResults:itemEntities];
-            });
+    
+    NSString *searchString = [self.txtSearch.text stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    __weak typeof (self) weakSelf = self;
+    
+    [self.searchManager searchItemsWithQuery:searchString completionBlock:^(NSArray *itemEntities) {
+        [HUD hide:YES];
+        if(itemEntities) {
+            [weakSelf showResults:itemEntities];
         }
-    });
+    }];
 }
 
 -(void)showResults:(NSArray *) results {

@@ -15,5 +15,6 @@
 @property(nonatomic,strong) NSString *imageURL;
 
 +(NSArray *)itemEntitiesFromData:(NSData *)jsonData;
++(NSArray *)itemEntitiesFromJson:(NSDictionary *)json;
 
 @end
